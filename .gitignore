@@ -3,6 +3,12 @@
 # ===============
 # Configuration files containing secrets
 *secret*
+logalert-cache.json
+
+# ===============
+# IDE
+# ===============
+.idea/
 
 # ===============
 # Python
