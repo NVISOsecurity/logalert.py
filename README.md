@@ -48,6 +48,13 @@ in the example configuration file [``logalert.conf``](logalert.conf).
 ``logalerty.py`` can be used for a wide variety of cases where you
 want to be alerted of activity on a computer. A few examples:
 
+### Continuous monitoring
+For continuous monitoring of a system, commands that make 
+use of ``logalert.py`` should be added as a cron job to the system.
+In the examples below, each command is part of a bash script which is
+ran each minute on the system. The caching system of ``logalert.py``
+ensures the sending of only new alerts and avoids duplicates.
+
 ### Alert on logging of high severity IDS alerts
 ``cat /var/log/suricata/eve.json | grep -v '"severity":3' | python logalert.py -c logalert.conf``
 
@@ -77,13 +84,6 @@ reaches this temperature however it will practically be on fire).</em>
 | cut -d "," -f 2-  | xargs -n 1 echo "VPN logon from" 
 | python logalert.py -c logalert.conf
 ``
-
-### Continuous monitoring
-For continuous monitoring of a system, commands that make 
-use of ``logalert.py`` should be added as a cron job to the system.
-In the examples above, each command is part of a bash script which is
-ran each minute on the system. The caching system of ``logalert.py``
-ensures the sending of only new alerts and avoids duplicates.
 
 ## Contact
 logalert.py is developed & maintained by NVISO Labs.
