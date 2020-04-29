@@ -142,13 +142,18 @@ def email_alert(alert, first_match_date_txt):
     server.ehlo()
     server.login(config.SMTP_USER, config.SMTP_PASSWORD)
 
-    msg = MIMEText(alert)
+    body = alert + "\n\n"\
+        + "alerts sent past " + config.ALERT_MUTE_TIME_HOURS + " hours:" \
+        + str(get_current_cache_size()) + "/" + str(config.CACHE_MAX_SIZE)
+
+    msg = MIMEText(body)
 
     msg['From'] = email.utils.formataddr(('logalert', config.SENDER))
     msg['To'] = email.utils.formataddr(('Recipient', config.RECIPIENT))
 
     if first_match_date_txt is None:
-        first_match_date_txt = "<no timestamp extracted>"
+        msg['Subject'] = '[logalert @ ' + platform.node() + '] ' + summarize_string(alert, 50)
+    else:
+        msg['Subject'] = '[logalert @ ' + platform.node() + ' - ' + first_match_date_txt + '] ' + summarize_string(alert, 50)
 
-    msg['Subject'] = '[logalert @ ' + platform.node() + ' - ' + first_match_date_txt + '] ' + summarize_string(alert, 50)
     server.sendmail(config.SENDER, config.RECIPIENT, msg.as_string())

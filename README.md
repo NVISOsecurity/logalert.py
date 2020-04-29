@@ -4,6 +4,10 @@ Smart piping of standard output to email for alerting.
 
 ## Introduction
 
+## How to use
+
+## Configuration
+
 ## Examples
 
 ## Contact
