@@ -142,7 +142,7 @@ def email_alert(alert, first_match_date_txt):
     server.ehlo()
     server.login(config.SMTP_USER, config.SMTP_PASSWORD)
 
-    body = alert + "\n\n\n\n--------------------------------------------------"\
+    body = alert + "\n\n\n\n-------\n"\
         + "alerts sent past " + str(config.ALERT_MUTE_TIME_HOURS) + " hours:\n" \
         + str(get_current_cache_size()) + " (" + str(config.CACHE_MAX_SIZE) + " max)"
 
