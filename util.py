@@ -144,7 +144,9 @@ def email_alert(alert, first_match_date_txt):
 
     body = alert + "\n\n\n\n-------\n"\
         + "alerts sent past " + str(config.ALERT_MUTE_TIME_HOURS) + " hours:\n" \
-        + str(get_current_cache_size()) + " (" + str(config.CACHE_MAX_SIZE) + " max)"
+        + str(get_current_cache_size()) + " (" + str(config.CACHE_MAX_SIZE) + " max)\n" \
+        + "extracted timestamp:\n" \
+        + str(first_match_date_txt)
 
     msg = MIMEText(body)
 
