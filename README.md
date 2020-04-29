@@ -34,6 +34,9 @@ can be sent to e-mail by "piping" standard output into it:
 
 The message will arrive as an alert in your inbox!
 
+![Hello World](screnshots/Hello_World.png "Hello World")
+
+
 ## Configuration
 
 All parameters to configure including documentationare listed
