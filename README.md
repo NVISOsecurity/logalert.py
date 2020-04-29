@@ -7,7 +7,7 @@ Smart piping of standard output to email for alerting.
 ## Examples
 
 ## Contact
-logalert.py is developed & maintained by by NVISO Labs.
+logalert.py is developed & maintained by NVISO Labs.
 
 You can reach out to the developers by creating an issue in github.
 For any other communication, you can reach out by sending us an e-mail 
