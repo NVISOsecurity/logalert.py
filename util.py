@@ -143,8 +143,8 @@ def email_alert(alert, first_match_date_txt):
     server.login(config.SMTP_USER, config.SMTP_PASSWORD)
 
     body = alert + "\n\n"\
-        + "alerts sent past " + str(config.ALERT_MUTE_TIME_HOURS) + " hours:" \
-        + str(get_current_cache_size()) + "/" + str(config.CACHE_MAX_SIZE)
+        + "alerts sent past " + str(config.ALERT_MUTE_TIME_HOURS) + " hours:\n" \
+        + str(get_current_cache_size()) + " (" + str(config.CACHE_MAX_SIZE) + " max)"
 
     msg = MIMEText(body)
 
