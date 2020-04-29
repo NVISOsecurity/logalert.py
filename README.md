@@ -44,6 +44,7 @@ in the example configuration file [``logalert.conf``](logalert.conf).
 
 
 ## Examples
+
 ``logalerty.py`` can be used for a wide variety of cases where you
 want to be alerted of activity on a computer. A few examples:
 
@@ -73,6 +74,14 @@ want to be alerted of activity on a computer. A few examples:
 | cut -d "," -f 2-  | xargs -n 1 echo "VPN logon from" 
 | python logalert.py -c logalert.conf
 ``
+
+### Continuous monitoring
+For continuous monitoring of a system, commands that make 
+use of ``logalert.py`` should be added as a cron job to the system.
+In the examples above, each command is part of a bash script which is
+ran each minute on the system. The caching system of ``logalert.py``
+prevents the system from only sending new alerts by email and avoids
+duplicate alerts.
 
 ## Contact
 logalert.py is developed & maintained by NVISO Labs.
