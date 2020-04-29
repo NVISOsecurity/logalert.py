@@ -51,7 +51,7 @@ want to be alerted of activity on a computer. A few examples:
 ### Alert on logging of high severity IDS alerts
 ``cat /var/log/suricata/eve.json | grep -v '"severity":3' | python logalert.py -c logalert.conf``
 
-### Alert on potential overheating of a Raspberry pi
+### Alert on potential overheating of a Raspberry pi (>=83 degrees)
 ``vcgencmd measure_temp | egrep -o '[0-9]*\.[0-9]*' 
 | grep -o '[8-9][3-9]\.[0-9]' 
 | xargs -n 1 echo "Raspberry Pi temprature:" 
@@ -59,7 +59,10 @@ want to be alerted of activity on a computer. A few examples:
 | grep  '[8-9][3-9]\.[0-9]' 
 | python logalert.py -c logalert.conf``
 
-### Alert on a disk filling
+<em>(the regexp. should be improved as it now ignores 91 and 92 degrees - when the pi
+reaches this temperature however it will practically be on fire).</em>
+
+### Alert on a disk filling beyond 80%
 ``df -akh / | cut -d "%" -f 1,2 | grep -o '[0-9]\+%' 
 |xargs -n 1 echo "Disk used:" | grep -o '[8-9][0-9]%'
 | grep -v CRON | python logalert.py -c logalert.conf``
