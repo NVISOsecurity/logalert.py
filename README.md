@@ -80,7 +80,7 @@ For continuous monitoring of a system, commands that make
 use of ``logalert.py`` should be added as a cron job to the system.
 In the examples above, each command is part of a bash script which is
 ran each minute on the system. The caching system of ``logalert.py``
-prevents the system from only sending new alerts by email and avoids
+ensures the sending of new alerts by email and avoids
 duplicate alerts.
 
 ## Contact
