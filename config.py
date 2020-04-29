@@ -20,3 +20,4 @@ SMTP_SERVER = config['logalert']['SMTP_SERVER']
 SMTP_PORT = int(config['logalert']['SMTP_PORT'])
 ALERT_MUTE_TIME_HOURS = int(config['logalert']['ALERT_MUTE_TIME_HOURS'])
 CACHE_FILE_NAME = config['logalert']['CACHE_FILE_NAME']
+CACHE_MAX_SIZE = int(config['logalert']['CACHE_MAX_SIZE'])

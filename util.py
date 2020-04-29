@@ -78,6 +78,25 @@ def extract_timestamp_from_alert(alert):
         return None, None, alert
 
 
+def get_current_cache_size():
+    current_cache_size = 0
+
+    with open(CACHE_FULL_PATH_NAME, mode='r') as cache_json:
+        existing_cache = json.load(cache_json)
+
+        for _ in existing_cache["cache"]:
+            current_cache_size = current_cache_size + 1
+
+    return current_cache_size
+
+
+def cache_is_full():
+    if get_current_cache_size() >= config.CACHE_MAX_SIZE:
+        return True
+    else:
+        return False
+
+
 def check_alert_against_cache(raw_alert):
     with open(CACHE_FULL_PATH_NAME, mode='r') as cache_json:
         existing_cache = json.load(cache_json)
