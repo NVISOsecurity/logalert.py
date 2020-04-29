@@ -34,7 +34,7 @@ can be sent to e-mail by "piping" standard output into it:
 
 The message will arrive as an alert in your inbox!
 
-![Hello World](screenshots/Hello_World.png "Hello World")
+<img src="screenshots/Hello_World.png" width="200">
 
 
 ## Configuration
