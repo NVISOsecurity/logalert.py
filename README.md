@@ -75,7 +75,7 @@ reaches this temperature however it will practically be on fire).</em>
 | grep -v CRON | python logalert.py -c logalert.conf``
 
 ### Detect VPN logons from a suspicious country
-``cat /var/log/syslog | grep "$(date +"%b %d")" 
+``cat /var/log/syslog
 | grep "docker-openvpn_server" 
 | grep "Connection Initiated with" 
 | grep -v CRON 
