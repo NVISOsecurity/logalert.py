@@ -36,6 +36,14 @@ The message will arrive as an alert in your inbox!
 
 <img src="screenshots/Hello_World.png" width="400">
 
+## Requirements
+
+- Python >= 3.6
+- Configuration details for an outbound mail server
+
+## Installation
+
+```pip install -r requirements.txt```
 
 ## Configuration
 
