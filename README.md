@@ -23,7 +23,7 @@ happens on a system.
 
 ## Requirements
 
-- Python >= 3.6 *(3.X might work, but not tested)*
+- Python >= 3.6 *(earlier versions of 3.X might work, but not tested)*
 - Configuration details for an outbound mail server
 
 ## Installation
