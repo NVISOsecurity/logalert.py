@@ -1,6 +1,6 @@
 # logalert.py
 
-Smart piping of standard output to email for alerting.
+Smart piping of command output to email for alerting.
 
 ```
 usage: logalert.py [-h] [-v] [-c CONFIG]
