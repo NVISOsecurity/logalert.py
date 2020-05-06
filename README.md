@@ -54,7 +54,8 @@ in the example configuration file [``logalert.conf``](logalert.conf).
 ## Examples
 
 ``logalerty.py`` can be used for a wide variety of cases where you
-want to be alerted of activity on a computer. A few examples:
+want to be alerted of activity on a computer. A few examples are explained below -
+these and more examples can also be found in the [examples](examples) folder.
 
 ### Continuous monitoring
 For continuous monitoring of a system, commands that make 
