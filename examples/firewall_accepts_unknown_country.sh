@@ -28,8 +28,8 @@ cat /var/log/syslog |grep "kernel: ACCEPT"| while read -r line ; do
               # Don't do anything
               :
           else
-                # Firewall accept from an unknown country, and from an IP address that is not yet known as being an abuser - report!
-          echo "$info - $line - $abuseinfo"| /usr/bin/python /home/pi/scripts/logalert.py/logalert.py -c /home/pi/scripts/logalert.py/logalert-pi-private.conf
+              # Firewall accept from an unknown country, and from an IP address that is not yet known as being an abuser - report!
+              echo "$info - $line - $abuseinfo"| /usr/bin/python /home/pi/scripts/logalert.py/logalert.py -c /home/pi/scripts/logalert.py/logalert-pi-private.conf
         fi
    fi
 done
