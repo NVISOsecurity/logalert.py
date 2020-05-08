@@ -54,8 +54,16 @@ in the example configuration file [``logalert.conf``](logalert.conf).
 ## Examples
 
 ``logalerty.py`` can be used for a wide variety of cases where you
-want to be alerted of activity on a computer. A few examples are explained below -
-these and more examples can also be found in the [examples](examples) folder.
+want to be alerted of activity on a computer. 
+
+We [wrote a blog post](https://blog.nviso.eu/2020/05/07/email-alerting-on-geographically-suspicious-firewall-connections-using-logalert-py-geoiplookup-and-abuseipdb/
+) where we explain in detail an example 
+use case for logalert.py to alert on geographically 
+suspicious firewall connections using geoiplookup and AbuseIPDB.
+
+A few other examples are explained below -
+these and more examples can also be found in 
+the [examples](examples) folder.
 
 ### Continuous monitoring
 For continuous monitoring of a system, commands that make 
