@@ -4,6 +4,7 @@
 
 # This could also be done as a monthly cron, but I keep it simple and add the below to my crob job that runs
 # each minute, along with all of the other alerting commands.
+# Just an example, don't forget to update parameters and path to logalert!
 day_of_month=$(date +%d)
 
 if [[ "${day_of_month}" = "01" ]];
