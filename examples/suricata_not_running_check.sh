@@ -5,7 +5,7 @@
 
 suricata_running=$(ps -aux |grep suricata |grep -v grep |wc -l)
 
-if [[ "${suricata_running}" = "1" ]];
+if [[ "${suricata_running}" = "0" ]];
 then
    echo "suricata appears to be down! (no suricata process running)" |/usr/bin/python /home/pi/scripts/logalert.py/logalert.py -c /home/pi/scripts/logalert.py/logalert-pi-private.conf
 fi
