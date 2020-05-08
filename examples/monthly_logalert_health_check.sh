@@ -1,7 +1,9 @@
 #!/bin/bash
-
 # works best when running the script as a periodic cron job which runs every minute.
-# On the first of the month, send a confirmation that everything is still running smooothly
+# On the first of the month, send a confirmation that everything is still running smooothly.
+
+# This could also be done as a monthly cron, but I keep it simple and add the below to my crob job that runs
+# each minute, along with all of the other alerting commands.
 day_of_month=$(date +%d)
 
 if [[ "${day_of_month}" = "01" ]];
