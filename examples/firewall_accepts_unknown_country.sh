@@ -8,7 +8,7 @@ ABUSEIPDBKEY="<YOUR API KEY HERE>"
 cat /var/log/syslog |grep "kernel: ACCEPT"| while read -r line ; do
    # Info will either contain something like 'Firewall accept from: Germany' or
    # nothing (in case of whitelisting). Based on that, we can decide in the script what to do.
-   info=$(echo "$line" |cut -d " " -f 10 |cut -d "=" -f 2 | xargs -r -n 1 geoiplookup {} |cut -d ":" -f 2- | cut -d "," -f 2-  | cut -d " " -f 2- |xargs -d '\n' -r -n 1 echo "Firewall accept from"| grep -v -f /home/pi/scripts/logalert_whitelist.txt)
+   info=$(echo "$line" |cut -d "=" -f 4 |cut -d " " -f 1 | xargs -r -n 1 geoiplookup {} |cut -d ":" -f 2- | cut -d "," -f 2-  | cut -d " " -f 2- |xargs -d '\n' -r -n 1 echo "Firewall accept from"| grep -v -f /home/pi/scripts/logalert_whitelist.txt)
 
    # If the info variable is empty, it means the specific country is whitelisted - do not alert
    if [ -z "$info" ]
