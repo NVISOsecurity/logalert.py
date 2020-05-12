@@ -17,7 +17,7 @@ cat /var/log/syslog |grep "kernel: ACCEPT"| while read -r line ; do
      :
    else
         # Also parse out the raw IP out of the connection log, we need it later for the abuse lookup
-        ip=$(echo "$line" |cut -d " " -f 10 |cut -d "=" -f 2)
+        ip=$(echo "$line" |cut -d "=" -f 4 |cut -d " " -f 1)
 
         # If the specific country is not whitelisted, then we are going to check abuse information.
         # If the abuse score is 0, meaning it's NOT a known attacking host (and likely an automated scan), we want to report on it!
